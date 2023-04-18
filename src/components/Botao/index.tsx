@@ -1,10 +1,15 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import style from './Botao.module.scss'
-class Botao extends React.Component{
+
+interface BotaoProps {
+    children: ReactNode;
+  }
+
+class Botao extends React.Component<BotaoProps>{
     render() {
         return(
             <button className={style.botao}>
-                Botão
+                {this.props.children}
             </button>
         )
     }
